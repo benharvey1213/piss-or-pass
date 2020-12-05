@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   // our login form group
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
+    displayName: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   })
 
@@ -24,7 +25,12 @@ export class RegisterComponent implements OnInit {
       this.auth.createUserWithEmailAndPassword(email, password)
       .then(
         (success) => {
-          console.log("Successfully created user:", success.user.displayName)
+          console.log("Successfully created user!")
+
+          success.user.updateProfile({
+            displayName: this.form.get('displayName').value
+          }).then((val) => {console.log('Successfully updated display name!')}).catch((err) => { console.log(err);})
+          
       }).catch(
         (err) => {
           console.log("Error creating user")
