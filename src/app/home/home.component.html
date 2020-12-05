@@ -1,7 +1,14 @@
 <nav class="navbar sticky-top navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Piss or Pass</a>
-    <a href="login">
+    
+    <div *ngIf="displayName" class="user-data">
+      <span class="navbar-text">{{displayName}}</span>
+      <a href="" (click)="logout()" style="margin-left: 10px;">Sign Out</a>
+    </div>
+    <a *ngIf="!displayName" href="login">
       <span class="navbar-text">Login</span>
     </a>
 </nav>
-<p>Home Works!</p>
+<div class="text-light">
+  <h1 *ngIf="displayName" class="text-center">Hello, {{displayName}}!</h1>
+</div>

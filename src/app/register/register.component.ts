@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
+  error: string = null;
+
   constructor(public auth: AngularFireAuth) { }
 
   register(email: string, password: string) {
@@ -25,15 +27,18 @@ export class RegisterComponent implements OnInit {
       this.auth.createUserWithEmailAndPassword(email, password)
       .then(
         (success) => {
-          console.log("Successfully created user!")
-
+          this.error = null;
+          console.log("Successfully created user!");
           success.user.updateProfile({
             displayName: this.form.get('displayName').value
-          }).then((val) => {console.log('Successfully updated display name!')}).catch((err) => { console.log(err);})
+          }).then((val) => { 
+            console.log('Successfully updated display name!')
+            window.location.href="login"
+           }).catch((err) => { this.error = err})
           
       }).catch(
         (err) => {
-          console.log("Error creating user")
+          this.error = err
         }
       )
     }

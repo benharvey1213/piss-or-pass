@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(public auth: AngularFireAuth) { }
 
   loginGoogle() {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(success => { location.href="" });
   }
 
   login(email: string, password: string){ 
-    this.auth.signInWithEmailAndPassword(email, password);
+    this.auth.signInWithEmailAndPassword(email, password).then(success => { location.href="" });
   }
 
   logout() {
@@ -32,6 +32,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // if the user is already logged in, redirect back to home
+    let userdata = null;
+    this.auth.user.subscribe(event => userdata = event);
+    if (userdata) {
+      location.href="";
+    }
   }
 
 }

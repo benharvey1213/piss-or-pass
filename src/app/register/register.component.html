@@ -1,5 +1,9 @@
-<div class="container bg-light rounded" style="margin-top: 100px;">
-    <form name="form" class="form-signin" style="padding-bottom: 10px; padding-top: 5px;" [formGroup]="form" 
+
+<div class="container bg-light rounded" style="margin-top: 100px; padding-top: 10px;">
+  <div *ngIf="this.error" class="alert alert-danger" role="alert" style="margin-top: 10px;">
+    {{this.error}}
+  </div>
+    <form name="form" class="form-signin" style="padding-bottom: 10px" [formGroup]="form" 
     (submit)="register(form.get('email').value, form.get('password').value)">
       <h1 class="h3 mb-3 font-weight-normal">Please enter an email and password</h1>
       <div class="form-group">
