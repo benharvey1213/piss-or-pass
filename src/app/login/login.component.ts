@@ -11,6 +11,8 @@ import firebase from 'firebase/app';
 })
 export class LoginComponent implements OnInit {
 
+  error: string = null;
+
   // our login form group
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -20,11 +22,11 @@ export class LoginComponent implements OnInit {
   constructor(public auth: AngularFireAuth) { }
 
   loginGoogle() {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(success => { location.href="" });
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(success => { location.href="" }).catch(err => { this.error = err });
   }
 
   login(email: string, password: string){ 
-    this.auth.signInWithEmailAndPassword(email, password).then(success => { location.href="" });
+    this.auth.signInWithEmailAndPassword(email, password).then(success => { location.href="" }).catch(err => { this.error = err });
   }
 
   logout() {
