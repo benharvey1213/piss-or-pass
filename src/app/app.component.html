@@ -3,7 +3,7 @@
 
     <div *ngIf="displayName" class="user-data">
         <span class="navbar-text">{{displayName}}</span>
-        <button class="btn btn-outline-warning" (click)="logout()" style="margin-left: 15px;">Sign Out</button>
+        <a href="" (click)="logout()" style="margin-left: 15px;">Sign Out</a>
     </div>
     <a *ngIf="!displayName" href="login">
         <span class="navbar-text">Login</span>
