@@ -12,13 +12,17 @@ import { HomeComponent } from './home/home.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { ReviewComponent } from './review/review.component';
+import { ReviewCompleteComponent } from './review-complete/review-complete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ReviewComponent,
+    ReviewCompleteComponent
   ],
   imports: [
     BrowserModule,

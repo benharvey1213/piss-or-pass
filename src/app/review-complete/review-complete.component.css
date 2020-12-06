@@ -1,0 +1,15 @@
+.contents {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px;
+}
+
+button {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    margin-left: 20px;
+}

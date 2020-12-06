@@ -1,0 +1,77 @@
+<div>
+    <button class="btn btn-outline-primary back" routerLink="/">Back</button>
+    <div *ngIf="displayName" class="main">
+        <h1 class="text-center">Submit a Review</h1>
+
+        <form (ngSubmit)="onClickSubmit()" #f="ngForm">
+            <div class="form-group">
+                <label>Business Name</label>
+                <input class="form-control" name="locationName" type="text" [(ngModel)]="locationName" required>
+            </div>
+
+            <div class="form-group">
+                <label>Restroom Type</label>
+                <select class="form-control" name="type" [(ngModel)]="type" required>
+                    <option>Men's Restroom</option>
+                    <option>Woman's Restroom</option>
+                    <option>Gender Neutral Restroom</option>
+                    <option>Family Restroom</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Cleanliness</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="cleanliness" [(ngModel)]="cleanliness">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Classiness</label>
+                <select class="form-control" name="classiness" [(ngModel)]="classiness">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Convenience</label>
+                <select class="form-control" name="convenience" [(ngModel)]="convenience">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="form-check form-group">
+                <input class="form-check-input" type="checkbox" value="" name="purchase" [(ngModel)]="purchase">
+                <label class="form-check-label">
+                  Purchase required to use restroom
+                </label>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="Submit" [disabled]="!f.valid">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <h4 *ngIf="!displayName ">Please <a [routerLink]="[ '/login'] ">Log In</a> or <a [routerLink]="[ '/signup'] ">Sign
+            Up</a> to write a review</h4>
+</div>

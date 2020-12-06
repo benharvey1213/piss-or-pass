@@ -1,1 +1,13 @@
+<nav class="navbar sticky-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Piss or Pass</a>
+
+    <div *ngIf="displayName" class="user-data">
+        <span class="navbar-text">{{displayName}}</span>
+        <button class="btn btn-outline-warning" (click)="logout()" style="margin-left: 15px;">Sign Out</button>
+    </div>
+    <a *ngIf="!displayName" href="login">
+        <span class="navbar-text">Login</span>
+    </a>
+</nav>
+
 <router-outlet></router-outlet>

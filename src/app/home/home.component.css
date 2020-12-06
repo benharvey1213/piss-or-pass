@@ -1,0 +1,17 @@
+.header {
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+button {
+    font-size: 1.4rem;
+    padding: 15px;
+    display: block;
+    width: 400px;
+    margin: auto;
+    margin-top: 10px;
+}

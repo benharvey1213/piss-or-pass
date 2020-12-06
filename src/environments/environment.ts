@@ -5,11 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyCwFiWl3IRF47kJ2adNMt7TOdrnCZqcNg8',
-    authDomain: 'userdata-9c704.firebaseapp.com',
-    databaseURL: 'https://userdata-9c704.firebaseio.com',
-    storageBucket: 'userdata-9c704.appspot.com',
-    messagingSenderId: '683930227745'
+    apiKey: "AIzaSyBlyGwIYcIeoHlGeEWVWoFnaCfjHU4BJNs",
+    authDomain: "piss-or-pass.firebaseapp.com",
+    databaseURL: "https://piss-or-pass.firebaseio.com",
+    projectId: "piss-or-pass",
+    storageBucket: "piss-or-pass.appspot.com",
+    messagingSenderId: "285290968224",
+    appId: "1:285290968224:web:be34f37247d036bb78c5c5",
+    measurementId: "G-18LG7FHS2Q"
   },
 };
 
