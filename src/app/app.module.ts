@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { ReviewComponent } from './review/review.component';
 import { ReviewCompleteComponent } from './review-complete/review-complete.component';
+import { NearbyComponent } from './nearby/nearby.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReviewCompleteComponent } from './review-complete/review-complete.compo
     HomeComponent,
     RegisterComponent,
     ReviewComponent,
-    ReviewCompleteComponent
+    ReviewCompleteComponent,
+    NearbyComponent
   ],
   imports: [
     BrowserModule,

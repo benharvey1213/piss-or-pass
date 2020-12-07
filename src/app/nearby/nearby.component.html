@@ -1,0 +1,15 @@
+<div class="card" *ngFor="let review of closeReviews">
+    <h1>{{review.locationName}}</h1>
+    <h2>{{review.distance | number: '1.0-1'}} miles away</h2>
+
+    <h3>Total Score: {{(review.cleanliness + review.classiness + review.convenience) / 3 | number: '1.0-1'}} / 5</h3>
+
+    <h4>Cleanliness: {{review.cleanliness}} / 5</h4>
+    <h4>Classiness: {{review.classiness}} / 5</h4>
+    <h4>Convenience: {{review.convenience}} / 5</h4>
+
+    <h4>Purchase <span *ngIf="!review.purchase">NOT</span> required</h4>
+
+
+    <a target="_blank" href="https://maps.google.com/?q={{review.latitude}},{{review.longitude}}"><img src="assets/maps.png" height="40" width="40" alt=""></a>
+</div>
